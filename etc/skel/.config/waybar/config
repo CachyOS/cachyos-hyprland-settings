@@ -159,7 +159,6 @@
         "format-icons": ["", "", "", "", ""]
     },
     "network": {
-        "interface": "wlan*", // (Optional) To force the use of this interface
         "format-wifi": "{ipaddr}",
         "format-ethernet": "{ipaddr}",
         "tooltip-format": "via {ifname}",
