@@ -10,7 +10,7 @@
     "margin-bottom":-11,
     //"margin-top":5,
     "modules-left": ["wlr/workspaces"],
-    "modules-right": ["temperature","network","battery","custom/ss","custom/cycle_wall","custom/expand","idle_inhibitor","cpu","memory","pulseaudio#sink","clock","tray"],
+    "modules-right": ["temperature","network","battery","custom/ss","custom/cycle_wall","custom/expand","custom/rate-mirrors","idle_inhibitor","cpu","memory","pulseaudio#sink","clock","tray"],
     "modules-center": ["hyprland/window"],
     // Modules configuration
     // custom modules ////////////////
@@ -35,6 +35,10 @@
         "on-click":"~/.config/hypr/scripts/expand_toolbar",
         "format":"{}",
         "exec":"~/.config/hypr/scripts/tools/expand arrow-icon"
+    },
+    "custom/rate-mirrors":{
+        "on-click": "bash ~/.config/waybar/scripts/rate-mirrors.sh",
+        "format": "↻",
     },
     // "custom/waybar-mpris": {
     //     "return-type": "json",
