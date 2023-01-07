@@ -167,14 +167,12 @@
         "format-alt": "{essid}"
     },
     "pulseaudio#sink": {
-        "on-scroll-up": "pactl set-sink-volume 0 +1%",
-        "on-scroll-down": "pactl set-sink-volume 0 -1%",
         "format": "{volume}% {icon}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
         "format-muted": " {format_source}",
         "format-icons": {
-            "headphone": "",
+            "headphone": "",
             "hands-free": "",
             "headset": "",
             "phone": "",
