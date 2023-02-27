@@ -24,7 +24,6 @@
         "custom/media"
     ],
     "modules-center": [
-        "custom/screenshot_t",
         "clock#date",
         "custom/weather"
     ],
@@ -35,6 +34,7 @@
         "cpu",
         "battery",
         "pulseaudio",
+        "custom/screenshot_t",
         "custom/power",
         "tray"
     ],
