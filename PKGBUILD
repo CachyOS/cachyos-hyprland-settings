@@ -11,8 +11,12 @@ makedepends=('coreutils')
 source=("$pkgname-$pkgver.tar.gz::$url/archive/$pkgver.tar.gz")
 sha512sums=('59035361f5d3beec6d3072494bab80c802b7d056858e0fb4559f626bb481fcf80009ed3883be21245f0b6e3e8c8389da5768cf4f67c661b1217ad0d6f27cdb28')
 depends=('cachyos-fish-config'
-         'nerd-fonts-fantasque-sans-mono'
+         'ttf-fantasque-nerd'
+         'ttf-font-awesome'
+         'otf-font-awesome'
+         'awesome-terminal-fonts'
          'noto-fonts'
+         'noto-fonts-emoji'
          'ttf-fira-sans'
          'ttf-hack'
          'kvantum-qt5'
