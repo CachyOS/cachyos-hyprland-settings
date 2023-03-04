@@ -3,7 +3,7 @@
 pkgname=cachyos-hyprland-settings
 pkgdesc='CachyOS Hyprland settings'
 pkgver=1.0.0
-pkgrel=1
+pkgrel=3
 arch=('any')
 url="https://github.com/cachyos/$pkgname"
 license=('GPL')
