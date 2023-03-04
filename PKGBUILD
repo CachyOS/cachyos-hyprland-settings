@@ -9,7 +9,7 @@ url="https://github.com/cachyos/$pkgname"
 license=('GPL')
 makedepends=('coreutils')
 source=("$pkgname-$pkgver.tar.gz::$url/archive/$pkgver.tar.gz")
-sha512sums=('59035361f5d3beec6d3072494bab80c802b7d056858e0fb4559f626bb481fcf80009ed3883be21245f0b6e3e8c8389da5768cf4f67c661b1217ad0d6f27cdb28')
+sha512sums=('54aed6670ea3e8125ea3a975e1b348a4f9f89d6a59499e73382cc9ccd1cb4c5b87da58e78187f879763693863d055def317fe367ded17610b8bcfbf7292e269a')
 depends=('cachyos-fish-config'
          'ttf-fantasque-nerd'
          'ttf-font-awesome'
