@@ -28,9 +28,9 @@ window:
 
   # GTK theme variant (Linux/BSD only)
   #
-  # Override the variant of the GTK theme. Commonly supported values are `dark` and `light`.
+  # Override the variant of the GTK theme. Commonly supported values are `Dark` and `Light`.
   # Set this to `None` to use the default theme variant.
-  decorations_theme_variant: dark
+  decorations_theme_variant: Dark
 
 scrolling:
   # Maximum number of lines in the scrollback buffer.
