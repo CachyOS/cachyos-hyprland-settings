@@ -146,8 +146,6 @@ live_config_reload: true
 
 working_directory: None
 
-alt_send_esc: true
-
 mouse:
   # Click settings
   #
