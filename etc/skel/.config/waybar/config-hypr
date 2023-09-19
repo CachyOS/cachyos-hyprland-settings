@@ -62,7 +62,7 @@
         "format": "",
         "tooltip": false,
         "on-click-right": "nwg-drawer",
-        "on-click": "wofi -show run",
+        "on-click": "wofi --show run",
         "on-click-middle": "pkill -9 wofi"
     },
     "custom/screenshot_t":{
