@@ -16,16 +16,19 @@
     "spacing": 5, // Gaps between modules (4px)
 
     "modules-left": [
-        "custom/rofi",
-        "wlr/workspaces",
+        //"custom/rofi",
+        "hyprland/workspaces",
+        //"hyprland/submap",
         "temperature",
         //"idle_inhibitor",
         //"mpd"
         "custom/media"
     ],
     "modules-center": [
+        //"hyprland/window"
         "clock#date",
         "custom/weather"
+        //"custom/gammastep"
     ],
     "modules-right": [
         "backlight",
@@ -33,7 +36,8 @@
         "memory",
         "cpu",
         "battery",
-        "pulseaudio",
+        //"pulseaudio",
+        "wireplumber",
         "custom/screenshot_t",
         "custom/power",
         "tray"
@@ -58,7 +62,7 @@
         "format": "",
         "tooltip": false,
         "on-click-right": "nwg-drawer",
-        "on-click": "wofi --show run",
+        "on-click": "wofi -show run",
         "on-click-middle": "pkill -9 wofi"
     },
     "custom/screenshot_t":{
@@ -99,7 +103,7 @@
 
     "memory": {
         "interval": 30,
-        "format": " {used:0.2f} / {total:0.0f} GB",
+        "format": "  {used:0.2f} / {total:0.0f} GB",
         "on-click": "alacritty -e btop"
     },
 
@@ -213,10 +217,35 @@
         "today-format": "<b>{}</b>"
     },
 
+    "custom/gammastep": {
+      "interval": 5,
+      "return-type": "json",
+      "exec": {
+        "pre": "if unit_status=\"$(systemctl --user is-active gammastep)\"; then\nstatus=\"$unit_status ($(journalctl --user -u gammastep.service -g 'Period: ' | tail -1 | cut -d ':' -f6 | xargs))\"\nelse\nstatus=\"$unit_status\"\nfi",
+        "alt": "${status:-inactive}",
+        "tooltip": "Gammastep is $status",
+      },
+      "format": "{icon}",
+      "format-icons": {
+        "activating": "󰁪 ",
+        "deactivating": "󰁪 ",
+        "inactive": "? ",
+        "active (Night)": " ",
+        "active (Nighttime)": " ",
+        "active (Transition (Night)": " ",
+        "active (Transition (Nighttime)": " ",
+        "active (Day)": " ",
+        "active (Daytime)": " ",
+        "active (Transition (Day)": " ",
+        "active (Transition (Daytime)": " ",
+      },
+      "on-click": "systemctl --user is-active gammastep && systemctl --user stop gammastep || systemctl --user start gammastep",
+    },
+
     "cpu": {
         "interval": 1,
         //"format": " {}%", // Icon: microchip
-        "format": "  {max_frequency}GHz <span color=\"darkgray\">| {usage}%</span>",
+        "format": "{max_frequency}GHz <span color=\"darkgray\">| {usage}%</span>",
         "max-length": 13,
         "min-length": 13
     },
@@ -259,9 +288,30 @@
         "exec": "$HOME/.config/waybar/get_kbdlayout.sh"
     },*/
 
-    "wlr/workspaces": {
-        "on-click": "activate",
-        "format": "{icon}"
+    "hyprland/workspaces": {
+        "all-outputs": true,
+        "format": "{name}",
+        "format-icons": {
+            "1": "一",
+            "2": "二",
+            "3": "三",
+            "4": "四",
+            "5": "五",
+            "6": "六",
+            "7": "七",
+            "8": "八",
+            "9": "九",
+            "10": "十",
+        },
+        "on-scroll-up": "hyprctl dispatch workspace e+1 1>/dev/null",
+        "on-scroll-down": "hyprctl dispatch workspace e-1 1>/dev/null",
+        "sort-by-number": true,
+        "active-only": false,
+    },
+
+    "hyprland/window": {
+        "max-length": 100,
+        "separate-outputs": true
     },
 
     "pulseaudio": {
@@ -284,7 +334,30 @@
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol",
-        "on-click-right": "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
+        "on-click-right": "amixer sset Master toggle"
+    },
+
+    "wireplumber": {
+        "on-click": "pavucontrol",
+        "on-click-right": "amixer sset Master toggle 1>/dev/null",
+        //on-click: "${wpctl} set-mute @DEFAULT_AUDIO_SINK@ toggle";
+        //on-scroll-down: "${wpctl} set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 0.04+";
+        //on-scroll-up: "${wpctl} set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 0.04-";
+        "format": "<span foreground='#fab387'>{icon}</span>  {volume}%",
+        "format-muted": " ",
+        "format-source": "",
+        "format-source-muted": "",
+        //"format-muted": "<span foreground='#fab387'> </span>",
+        //"format-icons": [ "<span foreground='#fab387'></span>" ]
+        "format-icons": {
+            "headphone": " ",
+            "hands-free": " ",
+            "headset": " ",
+            "phone": " ",
+            "portable": " ",
+            "car": " ",
+            "default": [" ", " ", " "]
+        },
     },
 
     "tray": {
