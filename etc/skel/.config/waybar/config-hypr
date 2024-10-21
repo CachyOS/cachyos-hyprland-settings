@@ -186,7 +186,7 @@
     },
 
     "custom/media": {
-        "format": "{icon} {}",
+        "format": "{0} {1}",
         "return-type": "json",
         "max-length": 40,
         "format-icons": {
