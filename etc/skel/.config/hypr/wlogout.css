@@ -1,0 +1,75 @@
+/* based on https://github.com/stefonarch/lxqt-wlogout/blob/master/style.css */
+* {
+    all: unset;
+    background-image: none;
+    font-size: 24px;
+    font-family: 'JetBrainsMono Nerd Font';
+    font-feature-settings: '"zero", "tnum", "ss01", "ss02", "ss03", "cv01"';
+    transition: 200ms;
+    box-shadow: none;
+    animation-timing-function: steps(12);
+    animation-duration: 1.0s;
+    border: none;
+    border-radius: 0;
+}
+
+window {
+    background-color: rgba(17, 24, 38, 0.9);
+    font-family: 'JetBrainsMono Nerd Font';
+    font-size: 24px;
+}
+
+label {
+    font-size: 32px;
+}
+
+label:focus,
+label:hover {
+    color: rgb(17, 24, 38);
+}
+
+button {
+    color: rgb(130, 220, 204);
+    background-color: rgb(24, 37, 69);
+    border: solid 3px rgb(0, 170, 132);
+    border-radius: 4px;
+    margin: 15px;
+    background-repeat: no-repeat;
+    background-position: center 40%;
+    background-size: 30%;
+}
+
+button:hover {
+    color: rgb(24, 37, 69);
+    border: solid 3px rgb(130, 220,204);
+    background: rgb(0, 125,111);
+    border-radius: 4px;
+    margin: 15px;
+    background-repeat: no-repeat;
+    background-position: center 40%;
+    background-size: 30%;
+}
+
+#lock {
+    background-image: image(url("/usr/share/wlogout/icons/lock.png"));
+}
+
+#logout {
+    background-image: image(url("/usr/share/wlogout/icons/logout.png"));
+}
+
+#suspend {
+    background-image: image(url("/usr/share/wlogout/icons/suspend.png"));
+}
+
+#hibernate {
+    background-image: image(url("/usr/share/wlogout/icons/hibernate.png"));
+}
+
+#shutdown {
+    background-image: image(url("/usr/share/wlogout/icons/shutdown.png"));
+}
+
+#reboot {
+    background-image: image(url("/usr/share/wlogout/icons/reboot.png"));
+}
