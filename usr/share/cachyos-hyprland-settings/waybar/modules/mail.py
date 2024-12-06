@@ -40,4 +40,3 @@ if ping == 0:
 
 else:
     exit(1)
-

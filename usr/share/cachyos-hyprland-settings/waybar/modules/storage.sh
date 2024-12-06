@@ -22,4 +22,3 @@ END {
   print "{\"text\":\""text"\", \"percentage\":"use",\"tooltip\":\""tooltip"\", \"class\":\""class"\"}"
 }
 '
-

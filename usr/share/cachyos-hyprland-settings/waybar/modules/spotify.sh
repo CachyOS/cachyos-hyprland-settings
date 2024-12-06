@@ -16,4 +16,3 @@ elif [[ $class == "stopped" ]]; then
 fi
 
 echo -e "{\"text\":\""$text"\", \"class\":\""$class"\"}"
-
