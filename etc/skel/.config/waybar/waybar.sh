@@ -7,4 +7,4 @@ killall -q waybar
 while pgrep -x waybar >/dev/null; do sleep 1; done
 
 # Launch main
-waybar -c /usr/share/cachyos-hyprland-settings/waybar/config-hypr -s /usr/share/cachyos-hyprland-settings/waybar/style.css
+waybar &
