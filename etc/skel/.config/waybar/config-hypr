@@ -144,7 +144,7 @@
         "format-alt-click": "click-right",
         "return-type": "json",
         "interval": 60,
-        "exec": "/usr/share/cachyos-hyprland-settings/waybar/modules/storage.sh"
+        "exec": "~/.config/waybar/modules/storage.sh"
     },
 
     "backlight": {
@@ -172,7 +172,7 @@
         "interval": 3600,
         "exec": "curl -s 'https://wttr.in/?format=1'",
         //"return-type": "json",
-        //"exec": "/usr/share/cachyos-hyprland-settings/waybar/modules/weather.sh",
+        //"exec": "~/.config/waybar/modules/weather.sh",
         "exec-if": "ping wttr.in -c1"
     },
     "custom/pacman": {
@@ -187,7 +187,7 @@
     },
 
 "custom/spotify": {
-    "exec": "/usr/share/cachyos-hyprland-settings/waybar/mediaplayer.py --player spotify",
+    "exec": "~/.config/waybar/mediaplayer.py --player spotify",
     "format": "{}  ",
     "return-type": "json",
     "on-click": "playerctl play-pause",
@@ -204,8 +204,8 @@
             "default": "🎜"
         },
         "escape": true,
-        //"exec": "/usr/share/cachyos-hyprland-settings/waybar/mediaplayer.py" // Script in resources folder
-        // "exec": "/usr/share/cachyos-hyprland-settings/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+        //"exec": "~/.config/waybar/mediaplayer.py" // Script in resources folder
+        // "exec": "~/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
     },
 
     "custom/power": {
