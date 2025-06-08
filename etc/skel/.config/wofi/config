@@ -1,6 +1,7 @@
 allow_images=true
-hide_scroll=true
+hide_scroll=false
 no_actions=false
 term=alacritty
 mode=drun
 --show
+
