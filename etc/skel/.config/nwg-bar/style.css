@@ -1,0 +1,41 @@
+window {
+    background-color: rgba(0, 0, 0, 0.0); /* Transparent base */
+}
+
+/* Outer bar container */
+#outer-box {
+    margin: 0px;
+    padding: 10px;
+}
+
+/* Inner bar: semi-transparent black with Material Blue border */
+#inner-box {
+    background-color: rgba(18, 18, 18, 0.92); /* Deep black background */
+    border-radius: 16px;
+    border: 2px solid rgba(33, 150, 243, 0.6); /* Material Blue 500 */
+    padding: 8px;
+    margin: 8px;
+}
+
+/* Button and icon base */
+button, image {
+    background: none;
+    border: none;
+    box-shadow: none;
+}
+
+/* Button layout */
+button {
+    padding: 12px 16px;
+    margin: 6px;
+    border-radius: 8px;
+    color: #E0E0E0;
+    font-family: "Sans", sans-serif;
+    font-size: 14px;
+}
+
+/* Hover effect: subtle blue glow */
+button:hover {
+    background-color: rgba(33, 150, 243, 0.15); /* Material Blue */
+}
+
