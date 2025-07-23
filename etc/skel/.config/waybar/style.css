@@ -56,7 +56,7 @@ window#waybar.hidden {
 
 #workspaces {
     background-color: #111827;
-    border-radius: 14px;
+    border-radius: 8px;
     padding: 3px 6px;  /* Adjusted padding to reduce height */
 }
 
@@ -65,7 +65,7 @@ window#waybar.hidden {
     font-size: 15px;   /* Slightly smaller font size */
     font-weight: 800;
     color: @foreground;
-    border-radius: 14px;
+    border-radius: 8px;
     padding: 3px 6px;  /* Reduced padding */
     margin: 2px;
     opacity: 1;
@@ -89,6 +89,8 @@ window#waybar.hidden {
 #custom-hyprPicker,
 #custom-power-menu,
 #custom-spotify,
+#custom-notification,
+#custom-rofi,
 #custom-weather,
 #custom-weather.severe,
 #custom-weather.sunnyDay,
@@ -101,49 +103,63 @@ window#waybar.hidden {
 #custom-weather.snowyIcyNight,
 #custom-weather.default {
     background-color: #111827;
-    border-radius: 14px;
+    border-radius: 8px;
     padding: 6px;  /* Adjusted padding */
 }
 
 #custom-screenshot_t {
     background-color: #111827;
-    border-radius: 14px;
-    padding: 6px;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+#custom-rofi {
+    background-color: #111827;
+    border-radius: 8px;
+    padding: 12px;
+}
+
+#custom-notification {
+    background-color: #111827;
+    border-radius: 8px;
+    padding: 12px;
 }
 
 #custom-spotify {
     background-color: #111827;
-    border-radius: 14px;
+    border-radius: 8px;
     padding: 3px 12px;
 }
 
 #tray {
     background-color: #111827;
-    border-radius: 14px;
+    border-radius: 8px;
     padding: 6px;  /* Adjusted padding */
 }
 
 #cpu {
     color: #fb958b;
     background-color: #111827;
+    border-radius: 8px;
     padding: 6px;
 }
 
 #memory {
     color: #ebcb8b;
+    border-radius: 8px;
     background-color: #111827;
     padding: 6px;
 }
 
 #custom-power {
     background-color: #111827;
-    border-radius: 14px;
+    border-radius: 8px;
     padding: 6px;
 }
 
 #custom-storage {
     background-color: #111827;
-    border-radius: 14px;
+    border-radius: 8px;
     padding: 6px;
 }
 
@@ -197,24 +213,29 @@ window#waybar.hidden {
 
 #pulseaudio {
     color: #7d9bba;
+    border-radius: 8px;
 }
 
 #backlight {
     color: #8fbcbb;
+    border-radius: 8px;
 }
 
 #clock {
     color: #c8d2e0;
+    border-radius: 8px;
 }
 
 #battery {
     color: #c0caf5;
+    border-radius: 8px;
 }
 
 #battery.charging,
 #battery.full,
 #battery.plugged {
     color: #26a65b;
+    border-radius: 8px;
 }
 
 @keyframes blink {
@@ -239,66 +260,83 @@ label:focus {
 
 #disk {
     background-color: #964b00;
+    border-radius: 8px;
 }
 
 #bluetooth {
     color: #707d9d;
+    border-radius: 8px;
 }
 
 #bluetooth.disconnected {
     color: #f53c3c;
+    border-radius: 8px;
 }
 
 #network {
     color: #b48ead;
+    border-radius: 8px;
 }
 
 #network.disconnected {
     color: #f53c3c;
+    border-radius: 8px;
 }
 
 #custom-media {
     background-color: #66cc99;
     color: #2a5c45;
     min-width: 100px;
+    border-radius: 8px;
 }
 
 #custom-media.custom-spotify {
     background-color: #66cc99;
+    border-radius: 8px;
 }
 
 #custom-media.custom-vlc {
     background-color: #ffa000;
+    border-radius: 8px;
 }
 
 #temperature {
     background-color: #f0932b;
+    border-radius: 8px;
 }
 
 #temperature.critical {
     background-color: #eb4d4b;
+    border-radius: 8px;
 }
 
 #tray > .passive {
     -gtk-icon-effect: dim;
+    border-radius: 8px;
 }
 
 #tray > .needs-attention {
     -gtk-icon-effect: highlight;
     background-color: #eb4d4b;
+    border-radius: 8px;
 }
 
 #idle_inhibitor {
-    background-color: #2d3436;
+    background-color: #111827;
+    padding: 12px;
+    border-radius: 8px;
 }
 
 #idle_inhibitor.activated {
-    background-color: #ecf0f1;
+    background-color: #111827;
+    border-radius: 8px;
+    padding: 12px;
     color: #2d3436;
 }
 
 #language {
     background: #00b093;
+    border-radius: 8px;
     color: #740864;
     padding: 0 0px;
     margin: 0 5px;
@@ -308,6 +346,7 @@ label:focus {
 #keyboard-state {
     background: #97e1ad;
     color: #000000;
+    border-radius: 8px;
     padding: 0 0px;
     margin: 0 5px;
     min-width: 16px;
@@ -315,8 +354,10 @@ label:focus {
 
 #keyboard-state > label {
     padding: 0 0px;
+    border-radius: 8px;
 }
 
 #keyboard-state > label.locked {
     background: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
 }

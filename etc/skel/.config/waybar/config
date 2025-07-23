@@ -16,11 +16,12 @@
     "spacing": 5, // Gaps between modules (4px)
 
     "modules-left": [
-        //"custom/rofi",
+        
         "hyprland/workspaces",
         //"hyprland/submap",
         "temperature",
-        //"idle_inhibitor",
+        "idle_inhibitor",
+        "custom/rofi",
         //"mpd"
         "custom/spotify"
     ],
@@ -39,6 +40,7 @@
         //"pulseaudio",
         "wireplumber",
         "custom/screenshot_t",
+        "custom/notification",
         "tray",
         "custom/power"
     ],
@@ -62,7 +64,7 @@
         "format": "",
         "tooltip": false,
         "on-click-right": "nwg-drawer",
-        "on-click": "wofi --show run",
+        "on-click": "wofi --show drun",
         "on-click-middle": "pkill -9 wofi"
     },
     "custom/screenshot_t":{
@@ -148,14 +150,9 @@
     },
 
     "backlight": {
-        "device": "intel_backlight",
-        "format": "{icon} {percent}%",
-        "format-alt": "{percent}% {icon}",
-        "format-alt-click": "click-right",
-        //"format-icons": ["", ""],
-        "format-icons": ["", ""],
-        "on-scroll-down": "brightnessctl s 5%-",
-        "on-scroll-up": "brightnessctl s +5%"
+        // "device": "acpi_video1",
+        "format": "{percent}% {icon}",
+        "format-icons": ["", "", "", "", "", "", "", "", ""]
     },
     "idle_inhibitor": {
         "format": "{icon}",
@@ -299,23 +296,25 @@
 
     "hyprland/workspaces": {
         "all-outputs": true,
-        "format": "{name}",
-        "format-icons": {
-            "1": "一",
-            "2": "二",
-            "3": "三",
-            "4": "四",
-            "5": "五",
-            "6": "六",
-            "7": "七",
-            "8": "八",
-            "9": "九",
-            "10": "十",
+        "format": "{icon}",
+        "format-icons": { "active" : "󱨇",
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": "",
+            "5": "",
+            "6": "",
+            "7": "",
+            "8": "",
+            "9": "",
+            "10": "",
         },
         "on-scroll-up": "hyprctl dispatch workspace e+1 1>/dev/null",
         "on-scroll-down": "hyprctl dispatch workspace e-1 1>/dev/null",
+        "on-click": "activate",
         "sort-by-number": true,
         "active-only": false,
+        "persistent-workspaces": {"*": 3},
     },
 
     "hyprland/window": {
@@ -372,5 +371,25 @@
     "tray": {
         "icon-size": 15,
         "spacing": 5
-    }
+    },
+      "custom/notification": {
+    "tooltip": false,
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "<span foreground='red'><sup></sup></span>",
+      "none": "",
+      "dnd-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-none": "",
+      "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "inhibited-none": "",
+      "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-inhibited-none": ""
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
+  },
 }

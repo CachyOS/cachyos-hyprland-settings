@@ -1,0 +1,2 @@
+1. ask Prt to add : nwg-dock , swaync , nm-applet , blueman , btop (done )
+2. ask prt to remove : mako (done )

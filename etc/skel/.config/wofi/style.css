@@ -1,46 +1,159 @@
+/* Global font and background */
 * {
     font-family: "Hack", monospace;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    transition: all 0.3s ease;  /* Smooth transitions for better UX */
 }
 
+/* Window background */
 window {
-    background-color: #3B4252;
+    background-color: transparent;  /*Needs to be transparent to fix rounded corners , bug in wofi , but i am goat so i found fix*/
+    border-radius: 16px;  /* Rounded corners for soft edges */
+    padding: 20px;
+    opacity: 0;  /* Initially hidden for fade-in effect */
+    animation: fadeIn 0.5s forwards;  /* Fade-in effect when the window appears */
 }
 
+/* Fade-in animation for the window */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Input box */
 #input {
-    margin: 5px;
-    border-radius: 0px;
-    border: none;
-    background-color: #3B4252;
-    color: white;
+    margin: 6px;
+    border-radius: 10px;  /* Rounded corners for input box */
+    border: 2px solid transparent;
+    background-color: #1B2432;  /* Darker background */
+    color: #E5E9F0;  /* Light, clear text */
+    padding: 14px 18px;
+    font-size: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);  /* Soft shadow for depth */
+    transition: box-shadow 0.3s ease, transform 0.3s ease;  /* Smooth focus effect */
 }
 
+/* Input box hover effect */
+#input:hover {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);  /* Slight shadow when hovering */
+    transform: translateY(-2px);  /* Slight lift effect */
+}
+
+/* Focus effect for input */
+#input:focus {
+    outline: none;
+    border: 2px solid #5E81AC;  /* Soft blue border on focus */
+    box-shadow: 0 0 12px rgba(94, 129, 172, 0.6);  /* Focus glow effect */
+}
+
+/* Inner box */
 #inner-box {
-    background-color: #383C4A;
+    background-color: #161F2A;  /* Darker navy with a clear edge */
+    border-radius: 12px;
+    padding: 16px;
 }
 
+/* Outer box */
 #outer-box {
-    margin: 2px;
-    padding: 10px;
-    background-color: #383C4A;
+    margin: 8px;
+    padding: 16px;
+    background-color: #161F2A;
+    border-radius: 16px;
 }
 
+/* Scroll styling */
 #scroll {
     margin: 5px;
+    border-radius: 8px;
 }
 
+#scroll::-webkit-scrollbar {
+    width: 8px;
+    background-color: #1B2432;  /* Track color */
+}
+
+#scroll::-webkit-scrollbar-thumb {
+    background-color: #4C566A;  /* Smooth thumb with rich depth */
+    border-radius: 10px;
+}
+
+/* Text */
 #text {
-    padding: 4px;
-    color: white;
+    padding: 10px;
+    color: #E5E9F0;  /* Light text for readability */
+    font-size: 15px;
 }
 
-#entry:nth-child(even){
-    background-color: #404552;
+/* Entry (list item) */
+#entry {
+    background-color: #1C2634;  /* Darker grey with rich navy tint */
+    margin: 6px;
+    padding: 12px 18px;
+    border-radius: 12px;  /* Softer rounded edges */
+    color: #E5E9F0;  /* Light text for contrast */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);  /* Soft material shadow */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;  /* Smooth hover and active effects */
 }
 
+/* Hover effect for entries */
+#entry:hover {
+    background-color: #3B4755;  /* Lighter navy-grey on hover */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);  /* Stronger shadow on hover */
+    transform: translateY(-4px);  /* Lift effect on hover */
+}
+
+/* Selected entry */
 #entry:selected {
-    background-color: #4C566A;
+    background-color: #5E81AC;  /* Soft blue highlight for selection */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);  /* Deeper shadow for selected item */
 }
 
+/* Text inside the entry */
 #text:selected {
     background: transparent;
 }
+
+/* Fade-in and Fade-out animation for entries */
+@keyframes fadeEntryIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Apply fade-in effect on entry */
+#entry {
+    animation: fadeEntryIn 0.5s ease-out forwards;
+}
+
+/* Scrollbar thumb */
+#scroll::-webkit-scrollbar-thumb {
+    background-color: #4C566A;  /* Dark grey-blue */
+    border-radius: 10px;
+}
+
+/* Scrollbar track */
+#scroll::-webkit-scrollbar-track {
+    background-color: #1B2432;  /* Darker track for smooth look */
+}
+
+/* Dynamically resizing input box during typing */
+#input {
+    width: 100%;  /* Full width */
+    transition: width 0.3s ease-in-out;  /* Smooth transition when typing */
+}
+
+/* Smooth resizing of the window and entries based on search */
+#inner-box,
+#outer-box {
+    transition: width 0.3s ease-in-out;  /* Smooth width transition */
+}
+
